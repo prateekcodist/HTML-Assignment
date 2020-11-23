@@ -1,0 +1,91 @@
+<html>
+
+<head>
+    <title>
+        Registration Form
+    </title>
+</head>
+
+<body>
+    <script type="text/javascript" language="JavaScript">
+        function checkCheckBoxes(theForm) {
+            if (
+            theForm.c1.checked == false &&
+            theForm.c2.checked == false &&
+            theForm.c3.checked == false&&
+            theForm.c4.checked == false) 
+            {
+                alert ('You didn\'t choose any of the checkboxes!');
+                return false;
+            } else { 	
+                return true;
+            }
+        }
+        </script> 
+    <h1>Candidate Information</h1>
+    <form onsubmit="return checkCheckBoxes(this);">
+        <table style="background-color: rgb(53, 229, 241);" border="1px">
+            <tr>
+                <td>Name: <sup style="color: red;">*</sup></td>
+                <td><input type="text" maxlength="15" required></td>
+            </tr>
+            <tr>
+                <td>Password: <sup style="color: red;">*</sup></td>
+                <td><input type="text" maxlength="15" required></td>
+            </tr>
+            <tr>
+                <td>Phone number: <sup style="color: red;">*</sup></td>
+                <td><input type="tel" pattern="[7-9]{1}[0-9]{9}" required></td>
+            </tr>
+            <tr>
+                <td>Gender: <sup style="color: red;">*</sup></td>
+                <td><input type="radio" name="gen" required>Male
+                    <input type="radio" name="gen" required>Female
+                </td>
+            </tr>
+            <tr>
+                <td>Date of birth: <sup style="color: red;">*</sup></td>
+                <td><input type="date" placeholder="dd/mm/yyyy" required></td>
+            </tr>
+            <tr>
+                <td>Email: <sup style="color: red;">*</sup></td>
+                <td><input type="email" required></td>
+            </tr>
+            <tr>
+                <td>Select highest qualification degree: <sup style="color: red;">*</sup></td>
+                <td><select>
+                        <option value="10th">10th</option>
+                        <option value="12th">12th</option>
+                        <option value="Graduate">Graduate</option>
+                        <option value="Post Graduate">Post Graduate</option>
+                    </select>
+
+                </td>
+            </tr>
+            <tr>
+                <td>Courses Interested in: <sup style="color: red;">*</sup></td>
+                <td><input type="checkbox" name="c1" value="1">HTML
+                    <input type="checkbox" name="c2" value="2">CSS
+                    <input type="checkbox" name="c3" value="3">Angular JS
+                    <input type="checkbox" name="c4" value="4">Jquery
+                </td>
+            </tr>
+            <tr>
+                <td>Comments:(Mention external certificate if any)</td>
+                <td><textarea cols="50" rows="8"></textarea></td>
+            </tr>
+            <tr>
+                <td>Upload Degree/External Certificates:<sup style="color: red;">*</sup></td>
+                <td><input type="file" name="Choose File" required></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="50"><input type="submit" name="Submit">
+                    <input type="reset" name="Reset">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
